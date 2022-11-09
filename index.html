@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+        integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+        integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+
+
+    <style>
+        .main-section {
+            width: 90%;
+            margin: auto;
+        }
+
+        .nav {
+
+            display: flex;
+
+            /* background-color: rgb(236, 240, 233); */
+            justify-content: space-around;
+            /* border: 1px solid red; */
+            align-items: center;
+            /* margin: auto; */
+            border-radius: 8px;
+            /* padding: 10px ; */
+
+
+        }
+
+        .nav>div:nth-child(1) {
+            width: 20%;
+        }
+
+        .logo {
+
+            width: 200px;
+        }
+
+        ul {
+            margin: 0;
+            background-color: rgb(81, 236, 184);
+            display: flex;
+            text-align: center;
+            justify-content: center;
+
+
+
+
+
+        }
+
+        input {
+            padding: 15px 250px;
+            border-radius: 6px;
+            text-align: center;
+        }
+
+        button {
+            padding: 10px 20px;
+            border-radius: 30px;
+            /* z-index: 1; */
+        }
+
+        ul li {
+            justify-content: space-evenly;
+            padding: 10px;
+
+            list-style: none;
+
+
+
+        }
+
+        .main {
+            display: flex;
+            width: 90%;
+            justify-content: space-around;
+            text-align: center;
+            margin: auto;
+        }
+
+        .main>div {
+
+            width: 30%;
+
+
+        }
+
+        .main>div>img {
+            width: 100%;
+        }
+
+        #container {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 20px;
+        }
+
+        .cart {
+            width: 55px;
+        }
+
+        .second {
+            display: flex;
+
+
+            color: white;
+            background-color: black;
+        }
+
+        .second li {
+            align-content: flex-start;
+            list-style: none;
+            font-weight: bold;
+            padding: 10px;
+        }
+
+
+
+        .img1 {
+            width: 100%;
+        }
+
+
+        .main-carousel {
+            display: flex;
+            justify-content: space-around;
+            width: 80%;
+            margin: auto;
+            align-items: center;
+
+        }
+
+        .main-carousel img {
+            width: 100%;
+        }
+
+
+
+        .main-slid {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+
+        .category1 {
+            margin: auto;
+
+        }
+
+        .category {
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: auto;
+        }
+
+        .category>div {
+            width: 30%;
+
+        }
+
+        .category>div>img {
+            width: 100%;
+        }
+
+        .category2 {
+            margin: auto;
+
+        }
+
+        .category3 {
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: auto;
+        }
+
+        .category3>div {
+            width: 20%;
+
+        }
+
+        .category3>div>img {
+            width: 40%;
+        }
+
+        .well>img {
+            width: 100%;
+        }
+
+        .well1>img {
+            width: 40%;
+        }
+
+        .well3>img {
+            width: 20%;
+        }
+
+        .owl-carousel {
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: auto;
+
+
+        }
+
+        .item {
+            width: 40%;
+        }
+
+        .item>img {
+            width: 70%;
+        }
+        .item1{
+            width: 20%;
+        }
+       
+        
+        .information{
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: auto;
+        }
+        .inform1{
+            width: 40%;
+        }
+        .foot{
+           
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: auto;
+            background-color: rgb(163, 221, 233);
+            padding: 40px;
+        }
+    </style>
+    <!-- <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css"> -->
+</head>
+
+<body>
+    <nav class="nav">
+        <div>
+            <img class="logo" src="globe pharmacy.png" alt="">
+        </div>
+        <div>
+            <div class="box">
+                <input type="text" placeholder="Enter Medicine name">
+
+                <button>Search</button>
+                </input>
+            </div>
+
+
+
+
+        </div>
+        <div>
+            <p>Register Page/Login page</p>
+
+        </div>
+        <div>
+            <img class="cart"
+                src="data:image/png;base64,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"
+                alt="">
+        </div>
+
+
+
+
+
+    </nav>
+    <ul>
+        <li>Medicine</li>
+        <li>Lab Tests</li>
+        <li>HealthCare</li>
+        <li>Health Blogs</li>
+        <li>PLUS</li>
+        <li>offers</li>
+        <li>Surgeries</li>
+        <li>Value Store</li>
+
+    </ul>
+    <ul class="second">
+        <li>Categories</li>
+        <li>Shop By Concerns</li>
+        <li>Deals of the Day</li>
+        <li>Health Blogs</li>
+        <li>Featured Brands</li>
+        <li>Lab Tests by Concern</li>
+
+
+    </ul>
+    <div class="main-section">
+
+
+        <div class="main">
+            <div>
+                <img src="https://assets.pharmeasy.in/apothecary/images/medicine_ff.webp?dim=256x0" alt="">
+                <h3>Medicine</h3>
+                <p>UPTO 20% OFF</p>
+
+            </div>
+            <div>
+                <img src="https://assets.pharmeasy.in/apothecary/images/labtest_ff.webp?dim=256x0" alt="">
+                <h3>Lab Tests</h3>
+                <p>UPTO 70% OFF</p>
+
+            </div>
+            <div>
+                <img src="https://assets.pharmeasy.in/apothecary/images/healthcare_ff.webp?dim=256x0" alt="">
+                <h3>Healthcare</h3>
+                <p>UPTO 60% OFF</p>
+
+            </div>
+            <div>
+                <img src="https://assets.pharmeasy.in/apothecary/images/health_blogs_ff.webp?dim=256x0" alt="">
+                <h3>Health Blogs</h3>
+
+
+            </div>
+            <div>
+                <img src="https://assets.pharmeasy.in/apothecary/images/plus_ff.webp?dim=256x0" alt="">
+                <h3>PLUS</h3>
+                <p>UPTO 20% OFF</p>
+
+            </div>
+            <div>
+                <img src="https://assets.pharmeasy.in/apothecary/images/offers_ff.webp?dim=256x0" alt="">
+                <h3>Offers</h3>
+
+
+            </div>
+            <div>
+                <img src="https://assets.pharmeasy.in/apothecary/images/offers_1_ff.webp?dim=256x0" alt="">
+                <h3>Surgeries</h3>
+
+
+            </div>
+            <div>
+                <img src="https://assets.pharmeasy.in/apothecary/images/value_store.png?dim=256x0" alt="">
+                <h3>Value Store</h3>
+                <p>UPTO 50% OFF</p>
+
+            </div>
+        </div>
+        <div class="main-slid">
+
+            <div><button id="prev">
+                    < </button>
+            </div>
+
+            <div class="main-carousel">
+                <img src="" alt="" class="img1">
+                <!-- <img src="" alt="" class="img2">
+                <img src="" alt="" class="img2"> -->
+
+                <!-- <div class="cell"> <img src="" alt=""  class="img1">
+            </div>
+            <div class="cell"> <img src="" alt=""  class="img1"></div> -->
+
+            </div>
+
+
+
+
+
+            <div><button id="next">></button></div>
+
+        </div>
+
+        <div class="category1">
+            <h1>Shop By Category</h1>
+            <div class="category">
+
+                <div><img
+                        src="https://cdn01.pharmeasy.in/dam/discovery/categoryImages/6d462f424a43372ea8b7b6f8ca13e052.png?f=png?dim=256x0"
+                        alt="">
+                    <p>Covid essentials</p>
+                </div>
+                <div><img
+                        src="https://cdn01.pharmeasy.in/dam/discovery/categoryImages/1e622b0308ec3ab48887512eaa3488a5.png?f=png?dim=256x0"
+                        alt="">
+                    <p>Personal care</p>
+                </div>
+                <div><img
+                        src="https://cdn01.pharmeasy.in/dam/discovery/categoryImages/335dae76832d370c94f0440f5ba89e1f.png?f=png?dim=256x0"
+                        alt="">
+                    <p>Health and food drinks</p>
+                </div>
+                <div><img
+                        src="https://cdn01.pharmeasy.in/dam/discovery/categoryImages/403b8ada7b113c7cb2e8d09e3420edfa.png?f=png?dim=256x0"
+                        alt="">
+                    <p>Health and food drinks</p>
+                </div>
+                <div><img
+                        src="https://cdn01.pharmeasy.in/dam/discovery/categoryImages/403b8ada7b113c7cb2e8d09e3420edfa.png?f=png?dim=256x0"
+                        alt="">
+                    <p>Health and food drinks</p>
+                </div>
+                <div><img
+                        src="https://cdn01.pharmeasy.in/dam/discovery/categoryImages/dc96175686f135b5a22d1e57165d0246.png?f=png?dim=256x0"
+                        alt="">
+                    <p>Health and food drinks</p>
+                </div>
+                <div><img
+                        src="https://cdn01.pharmeasy.in/dam/discovery/categoryImages/ecad9a974e003fb987858b3ee81413c6.png?f=png?dim=256x0"
+                        alt="">
+                    <p>Health and food drinks</p>
+                </div>
+                <div><img
+                        src="https://cdn01.pharmeasy.in/dam/discovery/categoryImages/514d0d7d01a63502b4ebfec9ae26f4d2.png?f=png?dim=128x0"
+                        alt="">
+                    <p>Health and food drinks</p>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- <div id="container">
+
+        </div> -->
+        <h1>New Launches</h1>
+        <p>New wellness range just for you!</p>
+
+        <div class="owl-carousel owl-theme">
+
+
+            <div class="item">
+                <img src="https://cdn01.pharmeasy.in/dam/products_otc/N25381/stayfree-cottony-xl-18s-2-1666017828.jpg?dim=1440x0"
+                    alt="">
+                <h3>Stayfree Cottony Xl </h3>
+                <p>MRP 120.00</p>
+            </div>
+
+
+
+
+            <div class="item">
+                <img src="https://cdn01.pharmeasy.in/dam/products_otc/O93156/glade-touch-fresh-lemon-refill-12ml-2-1645196546.jpg?dim=1440x0"
+                    alt="">
+                <h3>Stayfree Cottony Xl </h3>
+                <p>MRP 120.00</p>
+            </div>
+            <div class="item">
+                <img class="item1" src="https://cdn01.pharmeasy.in/dam/products_otc/I41452/grazewhite-cream-15gm-1-1641788142.jpg?dim=1440x0"
+                    alt="">
+                <h3>Stayfree Cottony Xl </h3>
+                <p>MRP 120.00</p>
+            </div>
+            <div class="item">
+                <img src="https://cdn01.pharmeasy.in/dam/products_otc/I41452/grazewhite-cream-15gm-1-1641788142.jpg?dim=1440x0"
+                    alt="">
+                <h3>Stayfree Cottony Xl </h3>
+                <p>MRP 120.00</p>
+            </div>
+            <div class="item">
+                <img class="item2" src="https://cdn01.pharmeasy.in/dam/products_otc/K49952/dettol-neem-bathing-soap-bar-with-pure-neem-oil-75g-buy-3-get-1-free-combo-offer-on-bath-soap-2-1664184591.jpg?dim=1440x0"
+                    alt="">
+                <h3>Stayfree Cottony Xl </h3>
+                <p>MRP 120.00</p>
+            </div>
+            <div class="item">
+                <img src="https://cdn01.pharmeasy.in/dam/products_otc/Z07796/supradyn-immuno-multivitamin-natural-immunity-booster-with-vit-c-vit-d-zinc-30-tablets-2-1665045164.jpg?dim=1440x0"
+                    alt="">
+                <h3>Stayfree Cottony Xl </h3>
+                <p>MRP 120.00</p>
+            </div>
+            <div class="item">
+                <img src="https://cdn01.pharmeasy.in/dam/products_otc/O77647/pharmeasy-digital-thermometer-flexi-tip-2-1663592915.jpg?dim=1440x0"
+                    alt="">
+                <h3>Stayfree Cottony Xl </h3>
+                <p>MRP 120.00</p>
+            </div>
+
+        </div>
+        <h1>Why Choose Us?</h1>
+        <div class="information">
+       
+            <div class="inform1">
+                <img src="https://assets.pharmeasy.in/apothecary/images/family.svg?dim=96x0" alt="">
+                <h3>32 Million+</h3>
+                <p>Registered users as of Mar 31, 2022</p>
+            </div>
+            <div class="inform1">
+                <img src="https://assets.pharmeasy.in/apothecary/images/deliveryBoy.svg?dim=96x0" alt="">
+                <h3>36 Million+</h3>
+                <p>Orders on Pharmeasy till date </p>
+            </div>
+            <div class="inform1">
+                <img src="https://assets.pharmeasy.in/apothecary/images/pincodeServed.svg?dim=96x0" alt="">
+                <h3>99000+</h3>
+                <p>Unique items sold last 3 months</p>
+            </div>
+            <div class="inform1">
+                <img src="https://assets.pharmeasy.in/apothecary/images/locationMarker.svg?dim=96x0" alt="">
+                <p>Pin codes serviced last 3 months</p>
+            </div>
+    
+        </div>
+
+
+    </div>
+ <div class="foot">
+        <div>
+            <h1>Company</h1>
+            <h2>About Us</h2>
+            <h2>Careers</h2>
+            <h2>Blog</h2>
+            <h2>Partner with PharmEasy</h2>
+            <h2>Sell at PharmEasy</h2>
+        </div>
+        <div>
+            <h1>Our Services</h1>
+            <h2>Order Medicine</h2>
+            <h2>Healthcare Products</h2>
+            <h2>Lab Tests</h2>
+            <h2>Find Nearest Collection Centre</h2>
+           
+        </div>
+        <div>
+            <h1>Featured Categories</h1>
+            <h2>Covid Essentials</h2>
+            <h2>Personal Care</h2>
+            <h2>Health Food and Drinks</h2>
+            <h2>Beauty</h2>
+            <h2>Skin Care</h2>
+        </div>
+        <div>
+            <h1>Need Help</h1>
+            <h2>Browse All Medicines</h2>
+            <h2>Browse All Molecules</h2>
+            <h2>Browse All Cities</h2>
+           
+        </div>
+        <div>
+            <h1>Policy Info</h1>
+            <h2>Editorial Policy</h2>
+            <h2>Privacy Policy</h2>
+            <h2>Terms and Conditions
+                
+                </h2>
+            <h2>Customer Support Policy</h2>
+            <h2>Return Policy</h2>
+        </div>
+
+        <div>
+            <h1>Follow us on</h1>
+            <a href="https://www.instagram.com/pharmeasyapp/"><img src="https://assets.pharmeasy.in/apothecary/images/Instagram.svg?dim=32x0" alt=""></a>
+
+            <a href="https://www.facebook.com/pharmeasy/"><img src="https://assets.pharmeasy.in/apothecary/images/facebook.svg?dim=32x0" alt=""></a>
+
+            <a href="https://www.youtube.com/channel/UCDats_DLX-bGZH3-KGu8JhA"><img src="https://assets.pharmeasy.in/apothecary/images/Youtube.svg?dim=32x0" alt=""></a>
+
+            <a href="https://twitter.com/pharmeasyapp/"><img src="https://assets.pharmeasy.in/apothecary/images/Twitter.svg?dim=32x0" alt=""></a>
+            
+        </div>
+        
+    </div>
+   
+   
+    
+
+    <h1>Our payment partners</h1>
+    <div>
+       <img src="https://assets.pharmeasy.in/apothecary/images/gpay.png?dim=1440x0" alt="">
+       <img src="https://assets.pharmeasy.in/apothecary/images/paytm.png?dim=1440x0" alt="">
+       <img src="https://assets.pharmeasy.in/apothecary/images/phonepe.png?dim=1440x0" alt="">
+       <img src="https://assets.pharmeasy.in/apothecary/images/amazon.png?dim=1440x0" alt="">
+       <img src="https://assets.pharmeasy.in/apothecary/images/visa.png?dim=1440x0" alt="">
+      
+
+    </div>
+    <div>
+        <p>&copy</p>
+       <h2>2022</h2>
+       <h3>Globe-Pharmacy.</h3>
+       <p>All Rights Reserved</p>
+
+    </div>
+   
+
+
+
+
+
+
+    </div>
+
+   
+       
+    
+       
+
+
+   
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
+        integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+        integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="text/javascript">
+        $('.owl-carousel').owlCarousel({
+            loop: true,
+            margin: 10,
+            nav: false,
+            autoplay: true,
+            autoplayTimeout: 5000,
+            dots: false,
+            responsive: {
+                0: {
+                    items: 1
+                },
+                600: {
+                    items: 3
+                },
+                1000: {
+                    items: 5
+                }
+            }
+        })
+    </script>
+
+
+</body>
+
+
+
+
+</html>
+
+
+<script src="scripts.js"></script>
