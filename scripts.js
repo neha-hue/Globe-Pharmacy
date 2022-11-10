@@ -1,4 +1,5 @@
 let url="https://636aa12ac07d8f936da39098.mockapi.io/products"
+let login=document.querySelector(".login")
 let data=[]
 async function showData(){
     try{
@@ -90,6 +91,9 @@ let generate=(array)=>{
     })
    
     
+    login.addEventListener("click",function(){
+        window.location.href='login.html'
+    })
 
 generate(images)
 
