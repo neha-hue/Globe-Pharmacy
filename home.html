@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       .personal{
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            gap: 20;
+            margin: auto;
+            width: 80%;
+            text-align: center;
+        }
+        .personal>div{
+            width: 70%;
+        }
+        .personal>div>img{
+            width: 100%;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div class="personal"></div>
+</body>
+
+</html>
+<script>
+    let personal = JSON.parse(localStorage.getItem("homes"))
+    console.log(personal)
+    // console.log(medicine)
+    function display(out) {
+
+        // document.querySelector(".medicine").innerHTML = "";
+        
+        out.forEach(function (elem, index) {
+            let div = document.createElement("div");
+            let imageProd = document.createElement("img")
+            imageProd.src = elem.image;
+            let title = document.createElement("h2");
+            title.innerText = elem.title;
+            let desc = document.createElement("p");
+            desc.innerText = elem.desc
+            let price = document.createElement("p")
+            price.innerText = elem.price
+           
+
+
+            div.append(imageProd, title, desc, price)
+
+            document.querySelector(".personal").append(div)
+
+
+        }); 
+
+    }
+    display(personal)
+</script>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       .medicine{
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            gap: 20;
+            margin: auto;
+            width: 80%;
+            text-align: center;
+        }
+        .medicine>div{
+            width: 70%;
+        }
+        .medicine>div>img{
+            width: 100%;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div class="medicine"></div>
+</body>
+
+</html>
+<script>
+    let medicine = JSON.parse(localStorage.getItem("items"))
+    console.log(medicine)
+    function display(out) {
+
+        // document.querySelector(".medicine").innerHTML = "";
+        
+        out.forEach(function (elem, index) {
+            let div = document.createElement("div");
+            let imageProd = document.createElement("img")
+            imageProd.src = elem.image;
+            let title = document.createElement("h2");
+            title.innerText = elem.title;
+            let desc = document.createElement("p");
+            desc.innerText = elem.desc
+            let price = document.createElement("p")
+            price.innerText = elem.price
+           
+
+
+            div.append(imageProd, title, desc, price)
+
+            document.querySelector(".medicine").append(div)
+
+
+        }); 
+
+    }
+    display(medicine)
+</script>
