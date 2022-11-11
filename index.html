@@ -8,6 +8,7 @@
 
 
     <title>Document</title>
+    <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
         integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -17,7 +18,7 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 
-
+<!-- 
 
     <style>
         .main-section {
@@ -303,19 +304,24 @@
             cursor: pointer;
 
         }
-    </style>
+    </style> -->
     <!-- <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css"> -->
 </head>
 
 <body>
+    
     <nav class="nav">
         <div>
             <a href="index.html">
             <img class="logo" src="globe pharmacy.png" alt=""></a>
+            
+
         </div>
+        <div>
         <div class="searches">
             <div class="box">
-                <input type="text" placeholder="Enter Medicine name" />
+                <input type="text" id="search" placeholder="Enter Medicine name" onkeyup="search()" />
+                
 
             </div>
             <div class="btn">
@@ -328,6 +334,14 @@
 
 
         </div>
+        <div id="medicare">
+
+            <a href="product.html">Medicine</a>
+            
+            <a href="product.html"> HealthCare</a>
+            <a href="product.html"> Categories</a>
+        </div>
+    </div>
         <div>
             <!-- <p>signup Page/Login page</p> -->
             <button class="login">Login OR Signup</button>
@@ -336,37 +350,18 @@
         <div>
             <a id="go_to_cart" href="cart.html">
                 <img class="cart"
-                    src="data:image/png;base64,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"
+                    src="https://img.icons8.com/ios-glyphs/512/shopping-cart.png"
                     alt="">
             </a>
         </div>
-
-
-
+        
+       
 
 
     </nav>
-    <ul>
-        <li>Medicine</li>
-        <li>Lab Tests</li>
-        <li>HealthCare</li>
-        <li>Health Blogs</li>
-        <li>PLUS</li>
-        <li>offers</li>
-        <li>Surgeries</li>
-        <li>Value Store</li>
+    <div id="container">
 
-    </ul>
-    <ul class="second">
-        <li>Categories</li>
-        <li>Shop By Concerns</li>
-        <li>Deals of the Day</li>
-        <li>Health Blogs</li>
-        <li>Featured Brands</li>
-        <li>Lab Tests by Concern</li>
-
-
-    </ul>
+    </div>
     <div class="main-section">
 
 
@@ -377,31 +372,31 @@
                 <p>UPTO 20% OFF</p>
 
             </div>
-            <div>
+            <!-- <div>
                 <img src="https://assets.pharmeasy.in/apothecary/images/labtest_ff.webp?dim=256x0" alt="">
                 <h3>Lab Tests</h3>
                 <p>UPTO 70% OFF</p>
 
-            </div>
+            </div> -->
             <div>
                 <img src="https://assets.pharmeasy.in/apothecary/images/healthcare_ff.webp?dim=256x0" alt="">
                 <h3>Healthcare</h3>
                 <p>UPTO 60% OFF</p>
 
             </div>
-            <div>
+            <!-- <div>
                 <img src="https://assets.pharmeasy.in/apothecary/images/health_blogs_ff.webp?dim=256x0" alt="">
                 <h3>Health Blogs</h3>
 
 
-            </div>
-            <div>
+            </div> -->
+            <!-- <div>
                 <img src="https://assets.pharmeasy.in/apothecary/images/plus_ff.webp?dim=256x0" alt="">
                 <h3>PLUS</h3>
                 <p>UPTO 20% OFF</p>
 
-            </div>
-            <div>
+            </div> -->
+            <!-- <div>
                 <img src="https://assets.pharmeasy.in/apothecary/images/offers_ff.webp?dim=256x0" alt="">
                 <h3>Offers</h3>
 
@@ -412,7 +407,7 @@
                 <h3>Surgeries</h3>
 
 
-            </div>
+            </div> -->
             <div>
                 <img src="https://assets.pharmeasy.in/apothecary/images/value_store.png?dim=256x0" alt="">
                 <h3>Value Store</h3>
@@ -714,3 +709,5 @@
 
 
 <script src="scripts.js"></script>
+
+<script src="index.js"></script>

@@ -1,11 +1,14 @@
 let url="https://636aa12ac07d8f936da39098.mockapi.io/products"
 let data=[]
-let cartArr=JSON.parse(localStorage.getItem("items"))||[]
+let input=document.getElementById("search")
+
+let medicine=JSON.parse(localStorage.getItem("medicine"))||[]
 let personal=JSON.parse(localStorage.getItem("personals"))||[];
 let home=JSON.parse(localStorage.getItem("homes"))||[];
 let mother=JSON.parse(localStorage.getItem("mother"))||[];
 let skin=JSON.parse(localStorage.getItem("skin"))||[];
 let health=JSON.parse(localStorage.getItem("health"))||[];
+let select=document.querySelector("select")
 console.log(health)
 
 async function showData(){
@@ -25,11 +28,37 @@ async function showData(){
     }
 }
 showData();
+// function searches(){
+//     let q=document.querySelector("#searches").value;
+
+//     let newData=data.filter(function(elem){
+//         return elem.title.toLowerCase().includes(q.toLowerCase())
+//     });
+//     display(newData)
+// }
+function pharmacy(){
+    let selected=document.querySelector("select").value;
+    let filteredData=data.filter(function(elem){
+        return elem.category==selected
+    });
+    display(filteredData)
+
+}
+function handleSort(){
+    let selected=document.querySelector("#sorts").value;
+    if(selected=="HTL"){
+        data.sort((a,b)=>b.price-a.price)
+    }
+    if(selected=="LTH"){
+        data.sort((a,b)=>a.price-b.price)
+    }
+    display(data)
+}
 
 function display(data){
-    
+    let cartArr=JSON.parse(localStorage.getItem("items"))||[]
     document.querySelector("#container").innerHTML="";
-    data.forEach(function(elem){
+    data.forEach(function(elem,index){
         let div=document.createElement("div");
         let imageProd=document.createElement("img")
         imageProd.src=elem.image;
@@ -41,9 +70,11 @@ function display(data){
         price.innerText=elem.price;
         let category=document.createElement("p")
         category.innerText=elem.category
+        // let total=0
+        // total+=elem.price
         if(category.innerText=="medicine"){
-            cartArr.push(elem)
-            localStorage.setItem("items",JSON.stringify(cartArr))
+            medicine.push(elem)
+            localStorage.setItem("medicine",JSON.stringify(medicine))
         }
         if(category.innerText=="personal"){
             personal.push(elem)
@@ -65,11 +96,17 @@ function display(data){
             health.push(elem);
             localStorage.setItem("health",JSON.stringify(health))
         }
+        
+        
+       
+
         let btn=document.createElement("button");
         btn.innerText="ADD TO CART"
         btn.addEventListener("click",function(){
             cartArr.push(elem);
+            console.log("local",cartArr)
             localStorage.setItem("items",JSON.stringify(cartArr))
+            alert("product added successfully")
 
         })
         div.append(imageProd,title,desc,price,btn)

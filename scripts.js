@@ -1,40 +1,40 @@
-let url="https://636aa12ac07d8f936da39098.mockapi.io/products"
+// let url="https://636aa12ac07d8f936da39098.mockapi.io/products"
 let login=document.querySelector(".login")
-let data=[]
-async function showData(){
-    try{
-        let res=await fetch(url);
-        out=await res.json();
-        data=out;
-        // console.log(out);
-        display(out);
+// let data=[]
+// async function showData(){
+//     try{
+//         let res=await fetch(url);
+//         out=await res.json();
+//         data=out;
+//         // console.log(out);
+//         display(out);
 
 
-    }
-    catch(err){
-        console.log(err);
+//     }
+//     catch(err){
+//         console.log(err);
 
 
-    }
-}
-showData();
+//     }
+// }
+// showData();
 
-function display(out){
-    // document.querySelector("#container").innerHTML="";
-    out.forEach(function(elem,index){
-        let div=document.createElement("div");
-        let imageProd=document.createElement("img")
-        imageProd.src=elem.image;
-        let title=document.createElement("h2");
-        title.innerText=elem.title;
-        let desc=document.createElement("p");
-        desc.innerText=elem.desc
-        let price=document.createElement("p")
-        price.innerText=elem.price
-        div.append(imageProd,title,desc,price)
-        document.querySelector("#container").append(div)
-    })
-}
+// function display(out){
+//     document.querySelector("#container").innerHTML="";
+//     out.forEach(function(elem,index){
+//         let div=document.createElement("div");
+//         let imageProd=document.createElement("img")
+//         imageProd.src=elem.image;
+//         let title=document.createElement("h2");
+//         title.innerText=elem.title;
+//         let desc=document.createElement("p");
+//         desc.innerText=elem.desc
+//         let price=document.createElement("p")
+//         price.innerText=elem.price
+//         div.append(imageProd,title,desc,price)
+//         // document.querySelector("#container").append(div)
+//     })
+// }
 
 
 
