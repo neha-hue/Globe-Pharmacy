@@ -44,6 +44,9 @@ let flag=false;
             alert("login succesful")
             window.location.href='index.html';
         }
+        else{
+            alert("Invalid credentials")
+        }
         
 
 

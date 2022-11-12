@@ -28,14 +28,14 @@ async function showData(){
     }
 }
 showData();
-// function searches(){
-//     let q=document.querySelector("#searches").value;
+function search(){
+    let q=document.querySelector("#search").value;
 
-//     let newData=data.filter(function(elem){
-//         return elem.title.toLowerCase().includes(q.toLowerCase())
-//     });
-//     display(newData)
-// }
+    let newData=data.filter(function(elem){
+        return elem.title.toLowerCase().includes(q.toLowerCase())
+    });
+    display(newData)
+}
 function pharmacy(){
     let selected=document.querySelector("select").value;
     let filteredData=data.filter(function(elem){

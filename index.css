@@ -1,9 +1,10 @@
 *{
     margin: 0;
     padding: 0;
+    font-family: sans-serif;
 }
         .main-section {
-            width: 90%;
+            width: 80%;
             margin: auto;
         }
 
@@ -36,19 +37,7 @@
             width: 50px;
         }
 
-        /* ul {
-            margin: 0;
-            background-color: rgb(81, 236, 184);
-            display: flex;
-            text-align: center;
-            justify-content: center;
-            box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
-
-
-
-
-
-        } */
+       
 
         input {
             padding: 15px 250px;
@@ -77,16 +66,20 @@
         } */
 
         .main {
-            display: flex;
-            width: 90%;
-            justify-content: space-around;
-            text-align: center;
-            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            gap: 20px;
+            
         }
 
         .main>div {
 
-            width: 30%;
+            text-align: center;
+            width: 60%;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            margin: 0px 10px;
+            padding: 0px 15px;
+            border-radius: 6px;
 
 
         }
@@ -160,10 +153,15 @@
             align-items: center;
             justify-content: center;
             margin: auto;
+           
         }
 
         .category>div {
-            width: 30%;
+            width: 80%;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            margin: 0px 10px;
+            padding: 0px 15px;
+            /* height: 5vh; */
 
         }
 
@@ -189,8 +187,8 @@
 
         }
 
-        .category3>div>img {
-            width: 40%;
+        .category>div>img {
+            width: 100%;
         }
 
         .well>img {
@@ -216,16 +214,22 @@
         }
 
         .item {
-            width: 40%;
+            width: 60%;
+            /* width: 80%; */
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            margin: 0px 10px;
+            padding: 0px 15px;
         }
 
         .item>img {
-            width: 70%;
+            width: 100%;
+            height: 20vh;
         }
 
-        .item1 {
-            width: 20%;
-        }
+        /* .item1 {
+            width: 70%;
+            height: 30vh;
+        } */
 
 
         .information {
@@ -240,7 +244,7 @@
             width: 40%;
         }
 
-        .foot {
+        /* .foot {
 
             display: flex;
             align-items: center;
@@ -248,11 +252,12 @@
             margin: auto;
             background-color: rgb(163, 221, 233);
             padding: 40px;
-        }
+        } */
 
         .payt {
             display: flex;
             justify-content: space-between;
+            background-color: rgb(163, 221, 233);
         }
 
         .left>img {
@@ -289,8 +294,9 @@
             width: 35vw;
         }
         .btn{
-            width: 4vw;
-            margin-top: 5px ;
+            width: 5.5vw;
+            /* margin-top: 6px;
+            margin-bottom: 6px; */
         }
 
         .login:hover {
@@ -305,4 +311,130 @@
         }
         a:hover{
             background-color: black;
+        }
+        .btn button{
+            background-color: rgb(120, 35, 200);
+            color: white;
+            border: none;
+            font-weight: bold;
+            font-size: 20px;
+            margin-top: 5px;
+            margin-bottom: 6px;
+        }
+        .login{
+            background-color: rgb(120, 35, 200);
+            color: white;
+            border: none;
+            font-weight: bold;
+        }
+        .foot{
+            display: grid;
+            grid-template-columns: repeat(6,1fr);
+            height: 60vh;
+            margin: auto;
+            background-color: rgb(163, 221, 233);
+        }
+        .foot h1,p{
+            padding: 10px 15px;
+        }
+
+        .tren{
+            
+            /* width: 80%; */
+           
+            display: grid;
+            grid-template-columns: repeat(5,1fr);
+            gap: 20px;
+        }
+        .tren>div{
+            text-align: center;
+            width: 60%;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            margin: 0px 10px;
+            padding: 0px 15px;
+
+        }
+        .tren>div>img{
+            width: 100%;
+            height: 30vh;
+        }
+
+        .feature{
+            display: grid;
+            grid-template-columns: repeat(5,1fr);
+            gap: 20px;
+        }
+        .feature>div{
+            text-align: center;
+            width: 60%;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            margin: 0px 10px;
+            padding: 0px 15px;
+
+        }
+        .feature>div>img{
+            width: 100%;
+            height: 30vh;
+        }
+
+        .photo{
+            display: grid;
+            grid-template-columns: repeat(5,1fr);
+            gap: 20px;
+        }
+        .photo>div{
+            text-align: center;
+            width: 60%;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            margin: 0px 10px;
+            padding: 0px 15px;
+
+        }
+        .photo>div>img{
+            width: 100%;
+            height: 30vh;
+        }
+        
+        .deals{
+            display: grid;
+            grid-template-columns: repeat(5,1fr);
+            gap: 20px;
+        }
+        .deals>div{
+            text-align: center;
+            width: 60%;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            margin: 0px 10px;
+            padding: 0px 15px;
+
+        }
+        .deals>div>img{
+            width: 100%;
+            height: 20vh;
+        }
+        .impact{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: auto;
+
+        }
+
+        .impact>div{
+            text-align: center;
+            width: 90%;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            /* margin: 0px 10px; */
+            /* padding: 0px 15px; */
+            background-color:rgb(150, 251, 251) ;
+            margin: auto;
+
+        }
+       
+        .impact>div>h1{
+            line-height: 50px;
+        }
+        #play{
+            width: 100%;
+            height: 50vh;
         }
