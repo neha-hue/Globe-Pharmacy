@@ -7,20 +7,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-       .personal{
-            display: grid;
-            grid-template-columns: repeat(4,1fr);
-            gap: 20;
-            margin: auto;
-            width: 80%;
-            text-align: center;
-        }
-        .personal>div{
-            width: 70%;
-        }
-        .personal>div>img{
-            width: 100%;
-        }
+        .personal{
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        gap: 20px;
+        /* width: 80%; */
+        
+      }
+      .personal>div>img{
+        width: 100%;
+      }
+      .personal>div>button{
+       background-color: rgb(104, 242, 120);
+       color: rgb(22, 22, 22);
+       border-radius: 6px;
+       border: none;
+       font-size: 10px;
+       font-weight: bold;
+       padding: 10px 15px;
+
+      }
+      .personal>div{
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        /* background-color:rgb(245, 250, 249);  */
+        text-align: center;
+        padding: 20px;
+        border-radius: 10px;
+      }
+      .personal>div>button:hover{
+        background-color: blueviolet;
+      }
         
     </style>
 </head>

@@ -39,6 +39,7 @@ function search(){
 
     });
     display(newData)
+    // window.location.href="product.html"
 }
 
 
