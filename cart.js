@@ -4,20 +4,29 @@
 //inc dec error 
 let cartArr=JSON.parse(localStorage.getItem("items"));
 let len=document.querySelector("#len")
+
 //let cart=document.querySelector(".cart")
 
 let totals=document.querySelector("#count");
+
+let c=1
+let total=0
+
+// console.log("local",t)
 function display(out){
    
-    document.querySelector(".cart").innerHTML="";
-    let total=0;
-    let c=1
+    document.querySelector(".carts").innerHTML="";
+    // let total=localStorage.getItem("total")
+    
+    // console.log(total)
+   
     // window.location.reload()
     // if(total!==0){
     //     window.location.reload()
     // }
     
     out.forEach(function(elem,index){
+        // let total=0;
         let div=document.createElement("div");
         let imageProd=document.createElement("img")
         imageProd.src=elem.image;
@@ -29,40 +38,50 @@ function display(out){
         
         // let q=1;
         
-        price.innerText=elem.price
-        total+=c*elem.price
+        price.innerText=elem.price;
+        total+=c*elem.price;
+    //    let ts=localStorage.setItem("total",total)
+        // let ts=localStorage.getItem("total");
+        // console.log(ts)
+       
         /*---------------------------*/ 
         let span=document.createElement("span");
          
         
         span.innerText=c
+
+          // increment function*************************************************
         let btn1=document.createElement("button");
         btn1.innerText="+"
         btn1.addEventListener("click",function(){
-        //    let add= c++
-        c++
+          c++
+        // c++
             span.innerText=c
             // q=add;
             console.log(c)
-            total+=c*elem.price
+            total=c*elem.price
+            console.log("total after inc",total)
             console.log(elem.price)
-            document.querySelector("#count").innerText=total.toFixed(2)
+            document.querySelector("#count").innerText=total
             // window.location.reload()
             // totals.innerText=total.toFixed(2)
 
         })
+
+        // decrement function*************************************************
         let btn2=document.createElement("button");
         btn2.innerText="-"
         btn2.addEventListener("click",function(){
-            if(c>=2){
-                let sub=--c
+            if(c>1){
+                c--
                 // let add=c--
                 console.log(c)
-                span.innerText=sub;
+                span.innerText=c;
                 // q=add;
-                total+=sub*elem.price
+                total=c*elem.price
+                console.log("total after dec",total)
                 
-                document.querySelector("#count").innerText=total.toFixed(2)
+                document.querySelector("#count").innerText=total
                 // window.location.reload()
                 // totals.innerText=total.toFixed(2)
 
@@ -83,8 +102,8 @@ function display(out){
         
         div.append(imageProd,title,desc,price,btn1,span,btn2,remove)
        
-        document.querySelector(".cart").append(div)
-        document.querySelector("#count").innerText=total.toFixed(2)
+        document.querySelector(".carts").append(div)
+        document.querySelector("#count").innerText=total
        
     });
     len.innerText=out.length

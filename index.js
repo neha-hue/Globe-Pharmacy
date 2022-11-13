@@ -1,16 +1,7 @@
 
 let url="https://636aa12ac07d8f936da39098.mockapi.io/products"
 let data=[]
-// let input=document.getElementById("search")
 
-// let medicine=JSON.parse(localStorage.getItem("medicine"))||[]
-// let personal=JSON.parse(localStorage.getItem("personals"))||[];
-// let home=JSON.parse(localStorage.getItem("homes"))||[];
-// let mother=JSON.parse(localStorage.getItem("mother"))||[];
-// let skin=JSON.parse(localStorage.getItem("skin"))||[];
-// let health=JSON.parse(localStorage.getItem("health"))||[];
-// let select=document.querySelector("select")
-// console.log(health)
 
 async function showData(){
     try{
@@ -45,6 +36,7 @@ function search(){
 
 function display(data){
     let cartArr=JSON.parse(localStorage.getItem("items"))||[]
+    let cartArrs=JSON.parse(localStorage.getItem("pro"))||[]
     document.querySelector("#container").innerHTML="";
     data.forEach(function(elem,index){
         let div=document.createElement("div");
@@ -58,7 +50,10 @@ function display(data){
         price.innerText=elem.price;
         let category=document.createElement("p")
         category.innerText=elem.category
-        
+        let anchor=document.createElement("a");
+        anchor.setAttribute("href","product.html");
+        // imageProd.style.width="100%"
+        // imageProd.style.height="20vh"
         
         
        
@@ -70,7 +65,15 @@ function display(data){
             localStorage.setItem("items",JSON.stringify(cartArr))
 
         })
+        div.addEventListener("click",function(){
+            cartArrs.push(elem)
+            console.log(cartArr)
+            localStorage.setItem("pro",JSON.stringify(cartArrs))
+            
+        });
         div.append(imageProd,title,desc,price,btn)
+        // anchor.append(div)
+        
         document.querySelector("#container").append(div)
         
     });
