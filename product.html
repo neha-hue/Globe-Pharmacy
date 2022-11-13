@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="nav.css">
+    <link rel="stylesheet" href="index.css">
     <style>
         #container{
         display: grid;
@@ -16,6 +16,7 @@
       }
       #container>div>img{
         width: 100%;
+        height: 50vh;
       }
       #container>div>button{
        background-color: rgb(104, 242, 120);
@@ -37,6 +38,54 @@
       #container>div>button:hover{
         background-color: blueviolet;
       }
+      #select{
+        
+        display: flex;
+        justify-content: center;
+        margin: auto;
+        margin-top: 30px;
+        margin-bottom: 50px;
+
+      }
+      select{
+        font-size: 50px;
+        font-weight: bold;
+        margin: 0px 10px;
+        background-color: rgb(20, 213, 220);
+      }
+
+      #pro{
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        gap: 20px;
+        z-index: 2;
+        /* width: 80%; */
+        
+      }
+      #pro>div>img{
+        width: 100%;
+        height: 50vh;
+      }
+      #pro>div>button{
+       background-color: rgb(104, 242, 120);
+       color: rgb(22, 22, 22);
+       border-radius: 6px;
+       border: none;
+       font-size: 10px;
+       font-weight: bold;
+       padding: 10px 15px;
+
+      }
+      #pro>div{
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        /* background-color:rgb(245, 250, 249);  */
+        text-align: center;
+        padding: 20px;
+        border-radius: 10px;
+      }
+      #pro>div>button:hover{
+        background-color: blueviolet;
+      }
         
     </style>
 </head>
@@ -45,7 +94,7 @@
     <nav class="nav">
         <div>
             <a href="index.html">
-            <img class="logo" src="globe pharmacy.png" alt=""></a>
+            <img class="logo" src="./globs.png" alt=""></a>
             
 
         </div>
@@ -68,17 +117,17 @@
         </div>
         <div id="medicare">
 
-            <a href="product.html">Medicine</a>
+            <!-- <a href="product.html">Medicine</a> -->
             
-            <a href="product.html"> HealthCare</a>
-            <a href="product.html"> Categories</a>
+            <!-- <a href="product.html"> HealthCare</a> -->
+            <!-- <a href="product.html"> Categories</a> -->
         </div>
     </div>
-        <div>
-            <!-- <p>signup Page/Login page</p> -->
+        <!-- <div>
+           
             <button class="login">Login OR Signup</button>
 
-        </div>
+        </div> -->
         <div>
             <a id="go_to_cart" href="cart.html">
                 <img class="cart"
@@ -108,8 +157,9 @@
 
     </ul> -->
     <!-- <input type="text" name="" id="searches" onkeyup="searches()"> -->
+    <div id="select">
     <select name="" id="" onchange="pharmacy()">
-        <option value="">select cateory</option>
+        <option value="">select category</option>
         <option value="medicine">Medicine</option>
         <option value="personal">Personal care</option>
         <option value="home">Home care</option>
@@ -121,12 +171,17 @@
         <option value="LTH">LTH</option>
         <option value="HTL">HTL</option>
     </select>
-    <button><a href="cart.html">Go to cart</a>
-    </button>
+    </div>
+    <!-- <button><a href="cart.html">Go to cart</a>
+    </button> -->
    
     <div id="container">
 
     </div>
+    <div id="pro">
+
+    </div>
+    
 </body>
 </html>
 <script src="product.js"></script>

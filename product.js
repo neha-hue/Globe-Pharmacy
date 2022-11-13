@@ -1,7 +1,7 @@
 let url="https://636aa12ac07d8f936da39098.mockapi.io/products"
 let data=[]
 let input=document.getElementById("search")
-
+let sear=JSON.parse(localStorage.getItem("pro"))
 let medicine=JSON.parse(localStorage.getItem("medicine"))||[]
 let personal=JSON.parse(localStorage.getItem("personals"))||[];
 let home=JSON.parse(localStorage.getItem("homes"))||[];
@@ -9,6 +9,7 @@ let mother=JSON.parse(localStorage.getItem("mother"))||[];
 let skin=JSON.parse(localStorage.getItem("skin"))||[];
 let health=JSON.parse(localStorage.getItem("health"))||[];
 let select=document.querySelector("select")
+// let total=localStorage.getItem("total")||[]
 console.log(health)
 
 async function showData(){
@@ -70,8 +71,12 @@ function display(data){
         price.innerText=elem.price;
         let category=document.createElement("p")
         category.innerText=elem.category
-        // let total=0
+       
         // total+=elem.price
+        
+        // localStorage.setItem("total",total)
+
+        // localStorage.setItem("total",total)
         if(category.innerText=="medicine"){
             medicine.push(elem)
             localStorage.setItem("medicine",JSON.stringify(medicine))
@@ -113,3 +118,33 @@ function display(data){
         document.querySelector("#container").append(div)
     });
 }
+
+
+function displaypro(data){
+    document.querySelector("#pro").innerHTML="";
+    let cartArr=JSON.parse(localStorage.getItem("items"))||[]
+    data.forEach(function(elem,index){
+        let div=document.createElement("div");
+        let imageProd=document.createElement("img")
+        imageProd.src=elem.image;
+        let title=document.createElement("h2");
+        title.innerText=elem.title;
+        let desc=document.createElement("p");
+        desc.innerText=elem.desc
+        let price=document.createElement("p")
+        price.innerText=elem.price;
+        let btn=document.createElement("button");
+        btn.innerText="ADD TO CART"
+        btn.addEventListener("click",function(){
+            cartArr.push(elem);
+            console.log("local",cartArr)
+            localStorage.setItem("items",JSON.stringify(cartArr))
+            alert("product added successfully")
+
+        })
+        div.append(imageProd,title,desc,price,btn)
+        document.querySelector("#pro").append(div)
+    });
+}
+displaypro(sear)
+

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            display: grid;
+            grid-template-columns: repeat(1,1fr);
+            width: 80%;
+            /* margin: auto; */
+            /* text-align: center; */
+        }
+        /* button{
+            width: 100;
+        } */
+        img{
+            margin-left: 250px;
+        }
+        button{
+            padding: 15px 25px;
+            margin-left: 600px;
+            font-weight: bold;
+            font-size: 30px;
+            border: none;
+            box-shadow: rgba(239, 9, 9, 0.17) 0px -23px 25px 0px inset, rgba(231, 12, 12, 0.15) 0px -36px 30px 0px inset, rgba(236, 8, 8, 0.1) 0px -79px 40px 0px inset, rgba(220, 10, 10, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(238, 12, 12, 0.09) 0px 8px 4px, rgba(244, 7, 7, 0.09) 0px 16px 8px, rgba(241, 13, 13, 0.09) 0px 32px 16px;
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <div>
+    <img src="./track.png" alt="">
+    
+</div>
+<button>Shop more</button>
+</body>
+</html>
+<script>
+let btn=document.querySelector("button");
+btn.addEventListener("click",function(){
+    window.location.href="index.html"
+})
+</script>
